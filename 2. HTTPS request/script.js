@@ -63,3 +63,21 @@
 
 
 // Asysnc va awaitnilarni o'rganamiz
+
+
+function resolveAfter2Seconds(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve("hello world")
+        },2000)
+    })
+}
+
+async function asynCall(){
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+}
+
+asynCall();
+
