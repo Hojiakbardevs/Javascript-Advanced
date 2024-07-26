@@ -61,7 +61,7 @@ class App {
   async #init() {
     this.#list = document.getElementById("table-body");
     try {
-      const host = "api.frankfurter .app";
+      const host = "api.frankfurter.app";
       const resp = await fetch(`https://${host}/latest?from=USD`);
       const data = await resp.json();
       this.#transformResult(data);
