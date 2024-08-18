@@ -29,8 +29,20 @@ function convertToRoman(num) {
   return roman;
 }
 
-document.getElementById("convertButton").addEventListener('click', function () {
+function showRomanNumeral() {
   const numberInput = document.getElementById("numberInput").value;
-  const romanNumerals = convertToRoman(parseInt(numberInput, 10));
-  document.getElementById("result").innerHTML = romanNumerals;
-});
+  const romanNumeral = convertToRoman(parseInt(numberInput, 10));
+  document.getElementById("romanNumeral").innerHTML = romanNumeral;
+}
+
+document
+  .getElementById("convertButton")
+  .addEventListener("click", showRomanNumeral);
+
+document
+  .getElementById("numberInput")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      showRomanNumeral();
+    }
+  });
