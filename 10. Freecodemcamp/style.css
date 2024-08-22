@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -40,22 +40,36 @@ main {
 
 .container {
   width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .container h2 {
   background-color: blueviolet;
   text-align: center;
   color: white;
+  width: 100%;
   padding: 40px;
   border-radius: 80px;
 }
 
-.container .btn{
-    padding: 10px 40px;
-    border-radius: 20px;
-    border: none;
-    background-color: white;
-    color: blueviolet;
-    box-shadow: rgba(212, 0, 255, 0.16) 0px 10px 36px 0px,
+.container .btn {
+  padding: 10px 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: blueviolet;
+  box-shadow: rgba(212, 0, 255, 0.16) 0px 10px 36px 0px,
     rgba(234, 0, 255, 0.06) 0px 0px 0px 1px;
+  font-weight: 600;
+  font-size: 20px;
 }
+.btn:active {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
