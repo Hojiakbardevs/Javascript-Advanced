@@ -1,84 +1,91 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #f1f5f8;
+    background-color: #f1f5f8;
 }
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 50px;
 }
+
 .text-element {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .text-element span {
-  content: "";
-  width: 100px;
-  height: 5px;
-  background-color: #49a6ea;
+    width: 100px;
+    height: 5px;
+    background-color: #49a6ea;
 }
+
 .content {
-  width: 60vw;
-  margin: 0 auto;
-  text-align: center;
-  padding: 40px 60px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 60px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .image_effect {
-  position: relative;
+    position: relative;
 }
+
 .image_effect .image-person {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: blue 0px 0px 0px 2px inset, rgb(73 166 234) 13px -8px 0px 0px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: blue 0px 0px 0px 2px inset, rgb(73 166 234) 13px -8px 0px 0px;
 }
+
 .image-icon {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 40%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 40%;
 }
+
 .text_effect h3 {
-  font-weight: 400;
-  color: #49a6ea;
+    font-weight: 400;
+    color: #49a6ea;
 }
+
 .text_effect p {
     opacity: 80%;
     color: #033d66;
-    overflow: hidden; /* Matnni ko'rinmas qilish uchun */
-    text-overflow: ellipsis; /* Matnni uch nuqta bilan kesish */
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: block;
-    max-height: 6em; /* 3 qatorli matnni o'rnatish (har bir qator 2em balandlikda) */
-    line-height: 1.5em; /* Qator balandligi */
-    white-space: normal; /* Matnni normal o‘rash */
+    max-height: 6em;
+    line-height: 1.5em;
+    white-space: normal;
 }
-
 
 .btn-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
+
 button {
-  padding: 5px 20px;
-  font-weight: 500;
-  color: #49a6ea;
-  margin: 10px;
+    padding: 5px 20px;
+    font-weight: 500;
+    color: #49a6ea;
+    margin: 10px;
 }

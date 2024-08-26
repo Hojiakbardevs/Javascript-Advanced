@@ -1,0 +1,45 @@
+[
+    {
+      "name": "Susan Doe",
+      "occupation": "Web Developer",
+      "imagePerson": "./img/1.png",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae reiciendis omnis iusto obcaecati voluptate unde delectus doloremque incidunt, odit voluptates accusantium quia ut impedit dolor ex, mollitia a, quis et sapiente est."
+    },
+    {
+      "name": "John Smith",
+      "occupation": "Graphic Designer",
+      "imagePerson": "./img/2.png",
+      "review": "Excellent service and great quality! Highly recommend to everyone looking for professional work."
+    },
+    {
+      "name": "Alice Johnson",
+      "occupation": "Content Writer",
+      "imagePerson": "./img/3.png",
+      "review": "The team was very responsive and understood my requirements perfectly."
+    },
+    {
+      "name": "Michael Brown",
+      "occupation": "SEO Specialist",
+      "imagePerson": "./img/4.png",
+      "review": "Their SEO strategies helped increase our website traffic significantly."
+    },
+    {
+      "name": "Emily White",
+      "occupation": "Marketing Manager",
+      "imagePerson": "./img/5.png",
+      "review": "Fantastic results and great attention to detail. Our campaign was a success!"
+    },
+    {
+      "name": "James Wilson",
+      "occupation": "UI/UX Designer",
+      "imagePerson": "./img/6.png",
+      "review": "The design process was seamless, and the final product exceeded our expectations."
+    },
+    {
+      "name": "Olivia Taylor",
+      "occupation": "Project Manager",
+      "imagePerson": "./img/7.png",
+      "review": "The project was completed on time and within budget, thanks to their professionalism."
+    }
+  ]
+  
