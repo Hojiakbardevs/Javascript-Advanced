@@ -4,24 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal projects</title>
+    <title>Modal Projects</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="modal-container">
-            <div class="modal">
+        <!-- Main Content -->
+        <button class="open-modal">Open Modal</button>
 
-                <h1>Modal Project</h1>
-                <button class="open-modal">Open Modal</button>
-                <button class="close-modal">close modal</button>
+        <!-- Modal Structure -->
+        <div class="modal-container hidden">
+            <div class="modal">
+                <h2>Warning</h2>
+                <p>You have unsaved changes. Do you want to leave without saving?</p>
+                <div class="modal-buttons">
+                    <button class="save-btn">Save Changes</button>
+                    <button class="close-modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-
-
-
     <script src="script.js"></script>
 </body>
 
