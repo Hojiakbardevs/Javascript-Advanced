@@ -4,8 +4,8 @@ const faqToggles = document.querySelectorAll('.faq-toggle');
 // Add event listener to each toggle button
 faqToggles.forEach((toggle) => {
     toggle.addEventListener('click', () => {
-        // Get the parent element (the .cards div)
-        const parent = toggle.parentNode;
+        // Get the closest .cards div
+        const parent = toggle.closest('.cards');
 
         // Get the FAQ answer element
         const answer = parent.querySelector('.faq-answer');
