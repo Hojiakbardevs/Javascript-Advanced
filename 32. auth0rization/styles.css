@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.product {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.pagination {
+  margin: 20px;
+}
+.pagination button {
+  margin: 5px;
+}
