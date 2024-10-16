@@ -7,41 +7,53 @@
     <style>
       body {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         margin: 0;
         padding: 0;
         background: black;
+        overflow: hidden; /* Prevent scrollbars */
       }
       #fire {
-        color: white;
         margin: 0;
         padding: 0;
         font-size: 16px;
         line-height: 1.5;
         position: absolute;
         bottom: 0;
+        white-space: pre; /* Preserve whitespace */
+      }
+      .fire-char {
+        display: inline-block; /* Allows individual character styling */
       }
     </style>
   </head>
 
   <body>
-    <div class="element1"></div>
-    <div class="element2"></div>
     <pre id="fire"></pre>
     <script>
       let width = 145;
       let height = 28;
-
-      (fireChars = " ,;+ltgti!lI?/\\|)(1}{][rcvzjftJUOQocxfXhqwWB8&%$#@"),
-        (maxCharIndex = fireChars.length);
+      const fireChars = " ,;+ltgti!lI?/\\|)(1}{][rcvzjftJUOQocxfXhqwWB8&%$#@";
+      const maxCharIndex = fireChars.length;
 
       let firePixelsArray = [];
-
       for (let i = 0; i < width * height + 1; i++) {
         firePixelsArray[i] = 0;
       }
 
-      generateFire = () => {
+      const colors = [
+        "rgba(0, 0, 0, 0)",    // Transparent
+        "rgba(255, 255, 0, 1)", // Bright Yellow
+        "rgba(255, 165, 0, 1)", // Orange
+        "rgba(255, 69, 0, 1)",  // Red Orange
+        "rgba(255, 0, 0, 1)"    // Red
+      ];
+
+      const getColor = (intensity) => {
+        return colors[Math.min(intensity, colors.length - 1)];
+      };
+
+      const generateFire = () => {
         let fireString = "";
 
         for (let i = 0; i < width; i++) {
@@ -53,7 +65,7 @@
         for (let i = 0; i < width; i++) {
           let randomCol = Math.floor(Math.random() * width);
           let index = randomCol + width * (height - 1);
-          firePixelsArray[index] = 0;
+          firePixelsArray[index] = 0; // Clear the top row
         }
 
         for (let i = 0; i < width * (height - 1); i++) {
@@ -61,16 +73,17 @@
             (firePixelsArray[i] +
               firePixelsArray[i + 1] +
               firePixelsArray[i + width] +
-              firePixelsArray[i + width + 1]) /
-            4;
+              firePixelsArray[i + width + 1]) / 4;
 
           firePixelsArray[i] = Math.floor(averageValue);
 
-          fireString += fireChars[firePixelsArray[i]];
-          if (i % width === 0) fireString += `\n`;
+          const char = fireChars[firePixelsArray[i]];
+          const color = getColor(firePixelsArray[i]);
+          fireString += `<span class="fire-char" style="color: ${color}">${char}</span>`;
+          if (i % width === 0) fireString += `<br />`; // New line for each row
         }
 
-        document.getElementById("fire").innerText = fireString;
+        document.getElementById("fire").innerHTML = fireString; // Use innerHTML to allow HTML rendering
         setTimeout(generateFire, 30);
       };
 
