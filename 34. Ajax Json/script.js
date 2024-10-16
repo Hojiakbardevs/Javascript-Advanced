@@ -10,6 +10,8 @@ sum.addEventListener("input", () => {
       const data = JSON.parse(request.response);
       console.log(data);
       usd.value = (+sum.value / data.current.usd).toFixed(2);
+    }else{
+        usd.value = "Что-то пошло не так";
     }
   });
 });

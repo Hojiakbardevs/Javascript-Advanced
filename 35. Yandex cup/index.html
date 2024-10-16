@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task yandex</title>
+    <style>
+        /* Ba'zi oddiy uslublar */
+        #signal {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gondolyer Harakati</h1>
+    
+    <div id="signal">Hozirgi signal: <span id="current-signal">RED</span></div>
+    
+    <button class="button" id="forward">Oldinga Harakat</button>
+    <button class="button" id="left">Chapga Harakat</button>
+    <button class="button" id="right">O'ngga Harakat</button>
+
+    <div id="result"></div>
+
+    <script src="traffic.js"></script>
+    <script>
+        // O'zgaruvchini faqat bir marta e'lon qiling
+        const trafficLightController = new TrafficLightController();
+        const traffic = new Traffic('RED', trafficLightController);
+        
+        // Signalni yangilash
+        trafficLightController.subscribe((newSignal) => {
+            document.getElementById('current-signal').innerText = newSignal;
+        });
+
+        // Harakat tugmalari uchun hodisalar
+        document.getElementById('forward').addEventListener('click', () => {
+            traffic.go('FORWARD')
+                .then(() => {
+                    document.getElementById('result').innerText = 'Oldinga harakat qilishga ruxsat berildi.';
+                })
+                .catch((error) => {
+                    document.getElementById('result').innerText = error;
+                });
+        });
+
+        document.getElementById('left').addEventListener('click', () => {
+            traffic.go('LEFT')
+                .then(() => {
+                    document.getElementById('result').innerText = 'Chapga harakat qilishga ruxsat berildi.';
+                })
+                .catch((error) => {
+                    document.getElementById('result').innerText = error;
+                });
+        });
+
+        document.getElementById('right').addEventListener('click', () => {
+            traffic.go('RIGHT')
+                .then(() => {
+                    document.getElementById('result').innerText = 'O\'ngga harakat qilishga ruxsat berildi.';
+                })
+                .catch((error) => {
+                    document.getElementById('result').innerText = error;
+                });
+        });
+
+        // Signalni o'zgartirish simulyatsiyasi
+        setTimeout(() => trafficLightController.changeSignal('GREEN'), 3000);  // 3 soniyadan so'ng 'GREEN'
+        setTimeout(() => trafficLightController.changeSignal('LEFT'), 6000);   // 6 soniyadan so'ng 'LEFT'
+    </script>
+</body>
+</html>
