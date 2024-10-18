@@ -40,15 +40,16 @@ body {
 .hand {
     width:50%;
     height:6px;
-    background:black;
+    background:rgb(54, 54, 54);
     position: absolute;
     top:50%;
     transform-origin: 100%;
-    transform: rotate(90deg);
     transition: all 0.05s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
-
+.hour-hand{
+    background-color: #000000;
+}
 .number {
     position: absolute;
     width: 50px;
@@ -69,10 +70,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #000;
     margin: 0 auto;
 }
 .numberss{
     position: absolute;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
