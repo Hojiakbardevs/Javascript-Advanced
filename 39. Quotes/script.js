@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function updateQuote() {
         try {
-            const response = await fetch("https://dummyjson.com/quotes");
+            const response = await fetch("https://dummyjson.com/quotes/random");
             const data = await response.json();
 
             if (response.ok) {
-                quote_text.textContent = data.content;
-                cite.textContent = data.author;
+                quote_text.textContent = data.quote; // content o'rniga quote yoziladi
+                cite.textContent = data.author; // Author kiritiladi
             } else {
                 quote_text.textContent = "An error occured";
                 console.log(data);
@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
             quote_text.textContent = "Oops! There is a problem with the quotes server.";
             console.log(error);
         }
-
     }
+
     async function updateQuoteCustom(f) {
         const response = await fetch(f);
         const data = await response.json();
         if (response.ok && data.length > 0) {
-            random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
-            quote_text.textContent = random_quote.content;
-            cite.textContent = random_quote.author;
+            random_quote = data[Math.floor(Math.random() * data.length)];
+            quote_text.textContent = random_quote.quote; // content o'rniga quote yoziladi
+            cite.textContent = random_quote.author; // Author to'liq chiqariladi
         } else {
             quote_text.textContent = "An error occured";
             console.log(data);
@@ -107,5 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStyle();
     loadQuote();
     handleColorSchemeChange(prefersDark);
-
 });
