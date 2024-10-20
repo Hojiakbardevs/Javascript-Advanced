@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,29 +11,44 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card {
     width: 80%;
     max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .card-body {
-    padding: 20px;
+    padding: 30px;
 }
 
 .quote {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
 }
 
 .content {
-    font-weight: 200;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666666;
 }
 
 cite {
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 500;
     font-style: normal;
+    color: #999999;
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
 }
 
 .mono {
@@ -50,52 +65,49 @@ cite {
 
 .settings {
     text-align: center;
-    border-color: 1px;
-    background-color: #eee;
     position: fixed;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
-.settings:hover {
-    opacity: 1;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8f8f8f;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .settings button {
     border: none;
-    background: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
     text-transform: capitalize;
     cursor: pointer;
-    transition: opacity 0.2s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .settings button:hover {
-    opacity: 0.6;
+    background-color: #0056b3;
 }
 
-.settings .modes button {
-    font-size: 0.8rem;
+.settings button:active {
+    background-color: #00408f;
+    transform: scale(0.98);
 }
 
-.settings .action {
-    padding: 0.4rem;
+.settings button + button {
+    margin-left: 10px;
 }
 
-.settings .size button {
-    font-size: 1rem;
-}
-
-.settings .fonts button {
-    font-size: 1.2rem;
-    display: inline-block;
-    text-align: center;
-}
-
-.settings small {
-    font-size: 0.8rem;
-    float: left;
+hr {
+    border: none;
+    border-bottom: 1px solid gray;
+    opacity: 0.3;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.8rem;
 }
 
 .light {
@@ -110,13 +122,4 @@ cite {
 
 .dash {
     opacity: 0.2;
-}
-
-hr {
-    border: none;
-    border-bottom: 1px solid gray;
-    opacity: 0.2;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 0.4rem;
 }
