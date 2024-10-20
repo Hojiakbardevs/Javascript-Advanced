@@ -44,3 +44,9 @@ h1 {
         height: 300px;
     }
 }
+
+button{
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: none;
+}
